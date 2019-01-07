@@ -21,7 +21,7 @@ var Juego = {
     /*Aca se van a agregar los obstaculos visibles. Tenemos una valla horizontal
     de ejemplo, pero podras agregar muchos mas. */
     new Obstaculo('imagenes/valla_horizontal.png', 70, 430, 30, 30, 1),
-    new Obstaculo('imagenes/valla_horizontal.png', 280, 130, 30, 30, 1),
+    new Obstaculo('imagenes/valla_horizontal.png', 275, 115, 30, 30, 1),
     new Obstaculo('imagenes/valla_horizontal.png', 430, 430, 30, 30, 1),
     new Obstaculo('imagenes/valla_horizontal.png', 510, 225, 30, 30, 1),
     new Obstaculo('imagenes/valla_horizontal.png', 840, 120, 30, 30, 1),
@@ -59,7 +59,15 @@ var Juego = {
   ],
   // Los enemigos se agregaran en este arreglo.
   enemigos: [
-
+    new ZombieCaminante('imagenes/zombie1.png', 120, 250, 10, 10, 1, {desdeX: 0, hastaX: 961, desdeY: 0, hastaY: 577}),
+    new ZombieCaminante('imagenes/zombie1.png', 200, 420, 10, 10, 1, {desdeX: 0, hastaX: 961, desdeY: 0, hastaY: 577}),
+    new ZombieCaminante('imagenes/zombie2.png', 800, 500, 10, 10, 1, {desdeX: 0, hastaX: 961, desdeY: 0, hastaY: 577}),
+    new ZombieCaminante('imagenes/zombie4.png', 800, 510, 10, 10, 1, {desdeX: 0, hastaX: 961, desdeY: 0, hastaY: 577}),
+    new ZombieCaminante('imagenes/zombie3.png', 50, 80, 10, 10, 1, {desdeX: 0, hastaX: 961, desdeY: 0, hastaY: 577}),
+    new ZombieCaminante('imagenes/zombie4.png', 50, 90, 10, 10, 1, {desdeX: 0, hastaX: 961, desdeY: 0, hastaY: 577}),
+    new ZombieConductor('imagenes/tren_vertical.png', 644, 0, 30, 90, 2, {desdeX: 0, hastaX: 961, desdeY: 0, hastaY: 577}, 'v'),
+    new ZombieConductor('imagenes/tren_vertical.png', 678, 400, 30, 90, 3, {desdeX: 0, hastaX: 961, desdeY: 0, hastaY: 577}, 'v'),
+    new ZombieConductor('imagenes/tren_horizontal.png', 400, 322, 90, 30, 4, {desdeX: 0, hastaX: 961, desdeY: 0, hastaY: 577}, 'h')
   ]
 
 }
@@ -158,7 +166,7 @@ Juego.capturarMovimiento = function (tecla) {
   if (this.chequearColisiones(movX + this.jugador.x, movY + this.jugador.y)) {
     /* Aca tiene que estar la logica para mover al jugador invocando alguno
     de sus metodos  */
-
+    this.jugador.moverse(movX, movY);
     /* COMPLETAR */
   }
 };

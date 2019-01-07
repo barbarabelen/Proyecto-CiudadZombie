@@ -15,6 +15,10 @@ var Jugador = {
 
   perderVidas: function(cantVidas){
     this.vidas -= cantVidas;
+  },
+  
+  moverse: function(x,y){
+    this.x += x;
+    this.y += y;
   }
-
 }
