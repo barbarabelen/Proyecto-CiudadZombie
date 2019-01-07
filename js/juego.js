@@ -167,7 +167,6 @@ Juego.capturarMovimiento = function (tecla) {
     /* Aca tiene que estar la logica para mover al jugador invocando alguno
     de sus metodos  */
     this.jugador.moverse(movX, movY);
-    /* COMPLETAR */
   }
 };
 
@@ -191,7 +190,7 @@ Juego.dibujar = function () {
 
   // Se recorren los enemigos pintandolos
   this.enemigos.forEach(function (enemigo) {
-    /* Completar */
+    Dibujante.dibujarEntidad(enemigo);
   });
 
   // El dibujante dibuja las vidas del jugador
@@ -209,7 +208,9 @@ Juego.dibujar = function () {
 un recorrido por los enemigos para dibujarlos en pantalla ahora habra que hacer
 una funcionalidad similar pero para que se muevan.*/
 Juego.moverEnemigos = function () {
-  /* COMPLETAR */
+  //this.enemigos.forEach(function(enemigo){
+    //enemigo.mover();
+  //})
 };
 
 /* Recorre los enemigos para ver cual esta colisionando con el jugador
