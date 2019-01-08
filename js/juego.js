@@ -238,8 +238,7 @@ Juego.chequearColisiones = function (x, y) {
   this.obstaculos().forEach(function (obstaculo) {
     if (this.intersecan(obstaculo, this.jugador, x, y)) {
 
-      /*COMPLETAR, obstaculo debe chocar al jugador*/
-
+      Obstaculo.chocar(this.jugador);
       puedeMoverse = false
     }
   }, this)
@@ -271,10 +270,15 @@ Juego.dibujarFondo = function () {
 
   // Si se gano el juego hay que mostrar el mensaje de ganoJuego de fondo
   else if (this.ganoJuego()) {
+    //se ocultan los enemigos, obstáculos y jugador del mapa
+    this.enemigos = [];
+    this.obstaculosCarretera = [];
+    this.jugador.x = -200;
     Dibujante.dibujarImagen('imagenes/Splash.png', 190, 113, 500, 203);
     document.getElementById('reiniciar').style.visibility = 'visible';
   } else {
     Dibujante.dibujarImagen('imagenes/mapa.png', 0, 5, this.anchoCanvas, this.altoCanvas);
+    Dibujante.dibujarRectangulo('rgb(193, 17, 17)', 760, 530, 126, 10);
   }
 };
 
