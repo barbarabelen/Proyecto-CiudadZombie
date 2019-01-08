@@ -18,15 +18,18 @@ ZombieConductor.prototype.atacar = function(jugador){
 
 /* Completar metodos para el movimiento y el ataque */
 ZombieConductor.prototype.mover = function(){
-  if (this.direccion === 'v'){
+  if (this.direccion == 'v') {
+
     this.y += this.velocidad;
-    if(this.y > Juego.altoCanvas+this.alto){
-      this.y = -this.alto*2;
+    if (this.y > this.rangoMov.hastaY ) {
+      this.y = this.rangoMov.desdeY-90;
     }
-  }else{
+  }
+  if (this.direccion == 'h') {
+
     this.x += this.velocidad;
-    if(this.x > Juego.anchoCanvas+this.ancho){
-      this.x = -this.ancho*2;
+    if (this.x > this.rangoMov.hastaX ) {
+      this.x = this.rangoMov.desdeX-90;
     }
   }
 }
