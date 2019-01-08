@@ -264,6 +264,10 @@ Juego.intersecan = function (elemento1, elemento2, x, y) {
 Juego.dibujarFondo = function () {
   // Si se termino el juego hay que mostrar el mensaje de game over de fondo
   if (this.terminoJuego()) {
+    //se ocutan los enemigos, obstáculos y jugador del mapa
+    this.enemigos = [];
+    this.obstaculosCarretera = [];
+    this.jugador.x = -200;
     Dibujante.dibujarImagen('imagenes/mensaje_gameover.png', 0, 5, this.anchoCanvas, this.altoCanvas);
     document.getElementById('reiniciar').style.visibility = 'visible';
   }
